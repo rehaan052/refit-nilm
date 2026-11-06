@@ -1,0 +1,126 @@
+======================================================================
+House 1 (washing machine = appliance5), rows read: 6,960,008
+stuck runs: 12 | total minutes: 3040.2
+longest run (minutes): 1186.5
+runs with aggregate value 0: 0
+runs where washing machine reached more than 20 W: 1
+runs where washing machine is frozen at a value above 0: 1
+most common stuck values:
+value
+227    1
+496    1
+152    1
+173    1
+182    1
+ten longest runs:
+ value               start                 end    n     minutes  wm_max_w  wm_frozen_above_zero
+   227 2014-08-01 17:12:18 2014-08-02 12:58:51 1149 1186.550000       0.0                 False
+   496 2014-09-06 22:52:04 2014-09-07 12:24:09  740  812.083333       0.0                 False
+   167 2015-02-18 16:17:38 2015-02-18 21:41:00 3046  323.366667       0.0                 False
+ 12505 2015-02-08 13:24:00 2015-02-08 16:12:32 1535  168.533333    2256.0                  True
+   152 2014-10-04 15:27:39 2014-10-04 17:05:49   93   98.166667       0.0                 False
+   265 2015-02-14 15:54:23 2015-02-14 17:22:59  766   88.600000       0.0                 False
+   283 2015-02-14 08:06:29 2015-02-14 09:18:33  597   72.066667       0.0                 False
+   182 2014-11-01 14:04:05 2014-11-01 15:15:43   75   71.633333       0.0                 False
+   377 2015-02-25 21:57:13 2015-02-25 23:00:55  517   63.700000       0.0                 False
+   356 2014-12-23 18:11:11 2014-12-23 19:10:58   96   59.783333       0.0                 False
+======================================================================
+House 2 (washing machine = appliance2), rows read: 5,733,526
+stuck runs: 16 | total minutes: 6914.4
+longest run (minutes): 2671.8
+runs with aggregate value 0: 0
+runs where washing machine reached more than 20 W: 0
+runs where washing machine is frozen at a value above 0: 0
+most common stuck values:
+value
+64     2
+201    1
+548    1
+580    1
+155    1
+ten longest runs:
+ value               start                 end     n     minutes  wm_max_w  wm_frozen_above_zero
+    84 2014-08-30 12:04:19 2014-09-01 08:36:06  4656 2671.783333       0.0                 False
+   153 2014-12-02 12:15:06 2014-12-03 09:51:35 12547 1296.483333       0.0                 False
+   155 2014-08-01 17:12:19 2014-08-02 12:59:41  1149 1187.366667       0.0                 False
+  2729 2015-01-05 20:45:30 2015-01-06 10:01:03  7646  795.550000       0.0                 False
+   548 2013-09-28 21:49:24 2013-09-29 02:30:45  2812  281.350000       0.0                 False
+   316 2014-12-05 11:29:24 2014-12-05 13:36:44  1096  127.333333       0.0                 False
+   389 2015-01-06 10:08:25 2015-01-06 11:36:46   717   88.350000       0.0                 False
+   573 2014-12-23 18:55:55 2014-12-23 20:10:09   554   74.233333       0.0                 False
+   105 2015-01-06 12:57:07 2015-01-06 14:03:24   498   66.283333       0.0                 False
+   555 2014-12-14 19:52:54 2014-12-14 20:45:33   366   52.650000       0.0                 False
+======================================================================
+House 5 (washing machine = appliance3), rows read: 7,430,755
+stuck runs: 6 | total minutes: 4058.0
+longest run (minutes): 2670.9
+runs with aggregate value 0: 0
+runs where washing machine reached more than 20 W: 2
+runs where washing machine is frozen at a value above 0: 5
+most common stuck values:
+value
+135     1
+1398    1
+610     1
+586     1
+799     1
+ten longest runs:
+ value               start                 end    n     minutes  wm_max_w  wm_frozen_above_zero
+  1398 2014-08-30 12:04:19 2014-09-01 08:35:13 4661 2670.900000      86.0                  True
+   135 2014-08-01 17:12:20 2014-08-02 12:58:52 1147 1186.533333       0.0                 False
+   586 2014-11-01 14:03:56 2014-11-01 15:14:13   67   70.283333       4.0                  True
+  4782 2015-01-23 19:30:59 2015-01-23 20:19:15   65   48.266667    1991.0                  True
+   799 2014-12-23 18:11:10 2014-12-23 18:53:23   44   42.216667       3.0                  True
+   610 2014-10-13 09:52:20 2014-10-13 10:32:06  376   39.766667       3.0                  True
+======================================================================
+House 6 (washing machine = appliance2), rows read: 6,241,971
+stuck runs: 68 | total minutes: 7008.9
+longest run (minutes): 1186.5
+runs with aggregate value 0: 0
+runs where washing machine reached more than 20 W: 4
+runs where washing machine is frozen at a value above 0: 0
+most common stuck values:
+value
+795    37
+246     1
+228     1
+227     1
+256     1
+ten longest runs:
+ value               start                 end    n     minutes  wm_max_w  wm_frozen_above_zero
+   266 2014-08-01 17:12:18 2014-08-02 12:58:50 1148 1186.533333       0.0                 False
+   453 2014-09-06 22:52:10 2014-09-07 12:24:29  741  812.316667       0.0                 False
+   287 2015-03-02 11:14:31 2015-03-02 22:52:06 6731  697.583333       0.0                 False
+   219 2015-06-24 02:33:07 2015-06-24 07:59:38 2890  326.516667       0.0                 False
+   795 2015-06-09 01:11:03 2015-06-09 05:04:02 1974  232.983333       0.0                 False
+   795 2015-06-09 12:51:08 2015-06-09 16:34:21 1853  223.216667    2137.0                 False
+   795 2015-06-23 00:39:24 2015-06-23 03:09:17 1315  149.883333       0.0                 False
+   795 2015-06-22 21:30:31 2015-06-22 23:52:39 1178  142.133333       0.0                 False
+   795 2015-06-23 03:16:05 2015-06-23 05:24:43 1091  128.633333       0.0                 False
+   369 2015-06-28 00:50:21 2015-06-28 02:55:32 1123  125.183333    1024.0                 False
+======================================================================
+House 7 (washing machine = appliance5), rows read: 6,756,034
+stuck runs: 21 | total minutes: 5627.6
+longest run (minutes): 2671.2
+runs with aggregate value 0: 0
+runs where washing machine reached more than 20 W: 2
+runs where washing machine is frozen at a value above 0: 1
+most common stuck values:
+value
+106    3
+197    2
+109    2
+108    1
+114    1
+ten longest runs:
+ value               start                 end    n     minutes  wm_max_w  wm_frozen_above_zero
+   105 2014-08-30 12:04:05 2014-09-01 08:35:14 4652 2671.150000       0.0                 False
+   109 2014-08-01 17:12:19 2014-08-02 12:59:40 1154 1187.350000       0.0                 False
+   222 2014-09-06 22:52:00 2014-09-07 12:23:59  739  811.983333       0.0                 False
+  4436 2014-10-04 15:27:45 2014-10-04 17:05:45   92   98.000000    2178.0                  True
+   204 2014-05-17 13:41:50 2014-05-17 15:00:51  665   79.016667       0.0                 False
+   202 2014-05-18 14:12:06 2014-05-18 15:31:07  652   79.016667       0.0                 False
+  5228 2014-11-01 14:04:08 2014-11-01 15:17:31   97   73.383333       0.0                 False
+  1494 2015-03-29 09:03:32 2015-03-29 10:16:08  652   72.600000     412.0                 False
+  1169 2014-12-23 18:11:11 2014-12-23 19:09:20   85   58.150000       0.0                 False
+   108 2014-05-17 07:40:19 2014-05-17 08:36:22  469   56.050000       0.0                 False

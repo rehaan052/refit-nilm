@@ -1,0 +1,48 @@
+======================================================================
+House 1
+Test 1: rows per clock hour (hours 00 to 05) on the days the UK clocks change
+  local clock time: spring day has NO rows in hour 02; autumn day has a repeated hour 01
+  UTC time: every hour has rows on both days
+  2014-03-30: rows= 13758 | rows in hours 0..5 = [0, 600, 600, 600, 600, 600] | duplicated timestamps = 0
+  2014-10-26: rows= 13330 | rows in hours 0..5 = [534, 986, 535, 534, 540, 533] | duplicated timestamps = 0
+  2015-03-29: rows= 12401 | rows in hours 0..5 = [542, 0, 537, 540, 538, 545] | duplicated timestamps = 0
+Test 2: hour of the morning rise and of the evening peak of the mean aggregate
+  local clock time: summer and winter give (about) the same hours; UTC time: summer is one hour EARLIER
+  summer (Jun-Aug): morning rise at hour 07, evening peak at hour 21
+  winter (Dec-Feb): morning rise at hour 10, evening peak at hour 18
+======================================================================
+House 2
+Test 1: rows per clock hour (hours 00 to 05) on the days the UK clocks change
+  local clock time: spring day has NO rows in hour 02; autumn day has a repeated hour 01
+  UTC time: every hour has rows on both days
+  2014-03-30: rows= 13642 | rows in hours 0..5 = [0, 600, 592, 600, 600, 600] | duplicated timestamps = 0
+  2014-10-26: rows= 13380 | rows in hours 0..5 = [543, 1057, 541, 537, 540, 540] | duplicated timestamps = 0
+  2015-03-29: rows= 12382 | rows in hours 0..5 = [536, 0, 535, 541, 539, 538] | duplicated timestamps = 0
+Test 2: hour of the morning rise and of the evening peak of the mean aggregate
+  local clock time: summer and winter give (about) the same hours; UTC time: summer is one hour EARLIER
+  summer (Jun-Aug): morning rise at hour 07, evening peak at hour 16
+  winter (Dec-Feb): morning rise at hour 08, evening peak at hour 17
+======================================================================
+House 6
+Test 1: rows per clock hour (hours 00 to 05) on the days the UK clocks change
+  local clock time: spring day has NO rows in hour 02; autumn day has a repeated hour 01
+  UTC time: every hour has rows on both days
+  2014-03-30: rows= 13726 | rows in hours 0..5 = [1, 595, 595, 600, 600, 600] | duplicated timestamps = 0
+  2014-10-26: rows= 13013 | rows in hours 0..5 = [509, 971, 524, 524, 523, 515] | duplicated timestamps = 0
+  2015-03-29: rows= 12319 | rows in hours 0..5 = [542, 0, 533, 536, 542, 542] | duplicated timestamps = 0
+Test 2: hour of the morning rise and of the evening peak of the mean aggregate
+  local clock time: summer and winter give (about) the same hours; UTC time: summer is one hour EARLIER
+  summer (Jun-Aug): morning rise at hour 09, evening peak at hour 18
+  winter (Dec-Feb): morning rise at hour 10, evening peak at hour 17
+======================================================================
+House 7
+Test 1: rows per clock hour (hours 00 to 05) on the days the UK clocks change
+  local clock time: spring day has NO rows in hour 02; autumn day has a repeated hour 01
+  UTC time: every hour has rows on both days
+  2014-03-30: rows= 13684 | rows in hours 0..5 = [0, 596, 581, 597, 598, 595] | duplicated timestamps = 0
+  2014-10-26: rows= 13444 | rows in hours 0..5 = [542, 983, 542, 539, 539, 535] | duplicated timestamps = 0
+  2015-03-29: rows= 12343 | rows in hours 0..5 = [536, 0, 541, 539, 540, 536] | duplicated timestamps = 0
+Test 2: hour of the morning rise and of the evening peak of the mean aggregate
+  local clock time: summer and winter give (about) the same hours; UTC time: summer is one hour EARLIER
+  summer (Jun-Aug): morning rise at hour 07, evening peak at hour 19
+  winter (Dec-Feb): morning rise at hour 08, evening peak at hour 18

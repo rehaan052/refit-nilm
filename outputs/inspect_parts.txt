@@ -1,0 +1,72 @@
+======================================================================
+data/raw/RAW_House1_Part1.csv
+rows: 4377877 | unparseable Time (NaT): 0
+first/last row Time: 2013-10-09 14:06:17 / 2014-10-01 01:27:07
+min/max Time: 2013-10-09 14:06:17 / 2014-10-01 01:27:07
+time sorted (monotonic increasing): False
+steps going backwards in time: 2
+step seconds quantiles (1%, 50%, 99%, max): [0.0, 3.0, 15.0] 3594413.0
+exact duplicate rows: 595935
+duplicate Time values: 645514
+Time minus Unix(UTC), seconds, top values:
+0.0    2243876
+1.0    2134001
+rows with ALL power cols NaN: 0
+rows with SOME (not all) power cols NaN: 0
+Aggregate NaN but some appliance present: 0
+negative values (all power cols): 0
+column max:
+Aggregate     24000.0
+Appliance1    69629.0
+Appliance2    98301.0
+Appliance3    32751.0
+Appliance4    98301.0
+Appliance5    32767.0
+Appliance6    14336.0
+Appliance7    98299.0
+Appliance8    65549.0
+Appliance9    65535.0
+======================================================================
+data/raw/RAW_House1_Part2.csv
+rows: 4140886 | unparseable Time (NaT): 0
+first/last row Time: 2014-06-27 21:57:50 / 2015-07-10 11:56:32
+min/max Time: 2014-06-27 21:57:50 / 2015-07-10 11:56:32
+time sorted (monotonic increasing): True
+steps going backwards in time: 0
+step seconds quantiles (1%, 50%, 99%, max): [6.0, 7.0, 9.0] 747252.0
+exact duplicate rows: 0
+duplicate Time values: 0
+Time minus Unix(UTC), seconds, top values:
+0.0    2122044
+1.0    2018842
+rows with ALL power cols NaN: 0
+rows with SOME (not all) power cols NaN: 2425207
+Aggregate NaN but some appliance present: 188973
+negative values (all power cols): 0
+column max:
+Aggregate     29159.0
+Appliance1    76677.0
+Appliance2    66685.0
+Appliance3    73725.0
+Appliance4    98301.0
+Appliance5    73725.0
+Appliance6    37610.0
+Appliance7    73725.0
+Appliance8    98301.0
+Appliance9    32737.0
+======================================================================
+OVERLAP BETWEEN PARTS
+overlap window: 2014-06-27 21:57:50 -> 2014-10-01 01:27:07
+Part1 rows inside window: 1257865
+Part2 rows inside window: 945403
+timestamps present in BOTH parts: 116037
+  Aggregate: identical in 0.1982 of common timestamps
+  Appliance1: identical in 0.7245 of common timestamps
+  Appliance2: identical in 0.6741 of common timestamps
+  Appliance3: identical in 0.7035 of common timestamps
+  Appliance4: identical in 0.7309 of common timestamps
+  Appliance5: identical in 0.8345 of common timestamps
+  Appliance6: identical in 0.8772 of common timestamps
+  Appliance7: identical in 0.8759 of common timestamps
+  Appliance8: identical in 0.7665 of common timestamps
+  Appliance9: identical in 0.0004 of common timestamps

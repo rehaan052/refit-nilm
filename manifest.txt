@@ -1,0 +1,230 @@
+## FILES (path, lines, bytes)
+./.pytest_cache/README.md         8 lines       302 bytes
+./DATA.md       108 lines      7926 bytes
+./README.md         0 lines       103 bytes
+./RESULTS.md         0 lines         0 bytes
+./Recommendation.md         0 lines         0 bytes
+./config.yaml        96 lines      4517 bytes
+./environment.yml        15 lines       204 bytes
+./notebooks/01_raw_house1_cleaning.ipynb      1465 lines    208477 bytes
+./notebooks/01_raw_house1_cleaningDEMO.ipynb       294 lines      9672 bytes
+./notebooks/02_washing_machine_eda.ipynb     17426 lines   7079146 bytes
+./pytest.ini         2 lines        41 bytes
+./scripts/inspect_parts.py        62 lines      2682 bytes
+./scripts/inspect_parts2.py        80 lines      2975 bytes
+./scripts/inspect_parts3.py        46 lines      1884 bytes
+./scripts/inspect_parts4.py        46 lines      2116 bytes
+./scripts/inspect_parts5.py        43 lines      1742 bytes
+./scripts/inspect_parts6.py        50 lines      2077 bytes
+./scripts/inspect_parts7.py        53 lines      2240 bytes
+./scripts/inspect_parts8.py        22 lines      1205 bytes
+./scripts/prepare_minute_data.py        54 lines      2039 bytes
+./scripts/run_section1.py        48 lines      1664 bytes
+./scripts/run_section3.py       150 lines      7327 bytes
+./scripts/section1_checks.py        73 lines      3150 bytes
+./scripts/section1_checks2.py        59 lines      2612 bytes
+./scripts/section1_checks3.py        50 lines      1991 bytes
+./scripts/section1_checks4.py        50 lines      1902 bytes
+./scripts/section1_checks5.py        25 lines       827 bytes
+./scripts/section3_checks_raw_window.py        21 lines       981 bytes
+./scripts/section3_checks_stuck.py        47 lines      2118 bytes
+./scripts/show_prepare_log.py        26 lines       955 bytes
+./src/__init__.py         0 lines         0 bytes
+./src/cleaning.py       289 lines     12434 bytes
+./src/cycles.py        40 lines      1720 bytes
+./src/data.py        74 lines      3222 bytes
+./src/features.py        53 lines      2457 bytes
+./src/io.py        63 lines      2322 bytes
+./src/metrics.py        89 lines      3720 bytes
+./src/models.py        85 lines      2495 bytes
+./src/plotting.py        49 lines      1902 bytes
+./src/splits.py        33 lines      1443 bytes
+./src/stuck.py        81 lines      3374 bytes
+./tests/test_cleaning.py       137 lines      5402 bytes
+./tests/test_cycles.py        29 lines       902 bytes
+./tests/test_data.py        49 lines      2001 bytes
+./tests/test_features.py        51 lines      1410 bytes
+./tests/test_metrics.py        55 lines      1818 bytes
+./tests/test_pipeline_stuck.py        47 lines      1798 bytes
+./tests/test_splits.py        30 lines      1055 bytes
+./tests/test_stuck.py        64 lines      2400 bytes
+
+## PYTHON DEFINITIONS (file: def/class lines)
+src/cleaning.py:13:def power_columns(df: pd.DataFrame) -> list[str]:
+src/cleaning.py:18:def standardise_columns(df: pd.DataFrame) -> pd.DataFrame:
+src/cleaning.py:33:def parse_timestamps(df: pd.DataFrame) -> pd.DataFrame:
+src/cleaning.py:40:def nan_run_lengths(mask: pd.Series) -> pd.Series:
+src/cleaning.py:52:def timestamp_report(df: pd.DataFrame, gap_thresholds_s=(30, 60, 120, 600, 3600)) -> dict:
+src/cleaning.py:75:def time_vs_unix_offset_hours(df: pd.DataFrame) -> pd.Series:
+src/cleaning.py:86:def value_report(df: pd.DataFrame, aggregate_max: float, appliance_max: float) -> pd.DataFrame:
+src/cleaning.py:113:def combine_parts_primary_first(df: pd.DataFrame, part_col: str = "part") -> tuple[pd.DataFrame, dict]:
+src/cleaning.py:143:def local_to_utc(df: pd.DataFrame, tz: str = "Europe/London") -> tuple[pd.DataFrame, dict]:
+src/cleaning.py:161:def sort_and_dedup(df: pd.DataFrame, keep: str = "first") -> tuple[pd.DataFrame, dict]:
+src/cleaning.py:190:def mask_impossible_values(
+src/cleaning.py:206:def resample_to_grid(df: pd.DataFrame, rule: str = "1min", agg: str = "mean") -> pd.DataFrame:
+src/cleaning.py:215:def fill_short_gaps(
+src/cleaning.py:233:def flag_aggregate_outages(df: pd.DataFrame, filled_mask: pd.Series | None = None) -> pd.DataFrame:
+src/cleaning.py:243:def outage_table(df: pd.DataFrame, flag_col: str = "agg_outage", step_minutes: float = 1.0) -> pd.DataFrame:
+src/cleaning.py:256:def run_cleaning_pipeline(df_raw: pd.DataFrame, cfg: dict) -> tuple[pd.DataFrame, dict]:
+src/cycles.py:15:def find_cycles(
+src/data.py:17:def clean_csv_path(cfg: dict, house: int) -> Path:
+src/data.py:21:def minute_parquet_path(cfg: dict, house: int) -> Path:
+src/data.py:25:def load_clean_house(
+src/features.py:13:def context_minutes(model_cfg: dict) -> int:
+src/features.py:21:def make_features(agg: pd.Series, model_cfg: dict, use_time: bool = False) -> pd.DataFrame:
+src/io.py:14:def load_config(path: str | Path | None = None) -> dict:
+src/io.py:21:def resolve(rel_path: str | Path) -> Path:
+src/io.py:27:def load_house_csv(path: str | Path, nrows: int | None = None) -> pd.DataFrame:
+src/io.py:44:def raw_house1_paths(cfg: dict) -> list[str]:
+src/io.py:52:def load_house_parts(paths: list) -> pd.DataFrame:
+src/metrics.py:11:def _check(y, p):
+src/metrics.py:21:def mae(y, p) -> float:
+src/metrics.py:27:def mae_on(y, p, on_threshold_w: float) -> float:
+src/metrics.py:34:def energy_error(y, p) -> float:
+src/metrics.py:41:def on_off_scores(y, p, on_threshold_w: float) -> dict:
+src/metrics.py:52:def cycle_scores(y, p, cycle_params: dict) -> dict:
+src/metrics.py:78:def evaluate(y, p, on_threshold_w: float, cycle_params: dict | None = None) -> dict:
+src/models.py:19:class AlwaysOff:
+src/models.py:29:class TrainMean:
+src/models.py:41:class HourlyProfile:
+src/models.py:68:def fit_lgbm(X_train, y_train, X_val, y_val, objective: str, params: dict | None = None, seed: int = 0):
+src/models.py:85:def predict_lgbm(model, X) -> np.ndarray:
+src/plotting.py:10:def plot_before_after(
+src/splits.py:13:def leave_one_house_out(houses: list[int]) -> list[dict]:
+src/splits.py:18:def assert_no_house_overlap(train_houses, test_houses) -> None:
+src/splits.py:24:def chronological_masks(n_rows: int, last_fraction: float, embargo: int = 0):
+src/stuck.py:16:def _power_cols(df: pd.DataFrame) -> list[str]:
+src/stuck.py:20:def find_stuck_runs(
+src/stuck.py:45:def stuck_row_mask(df: pd.DataFrame, runs: pd.DataFrame, time_col: str = "time") -> np.ndarray:
+src/stuck.py:59:def apply_stuck_aggregate(
+scripts/inspect_parts2.py:11:def load(f):
+scripts/inspect_parts2.py:57:def minute(df):
+scripts/inspect_parts3.py:28:def minute(df):
+scripts/inspect_parts4.py:18:def minute(df):
+scripts/inspect_parts5.py:9:def minute(f):
+scripts/inspect_parts6.py:11:def minute_raw(f):
+scripts/inspect_parts7.py:12:def minute_raw(f):
+scripts/prepare_minute_data.py:20:def main():
+scripts/run_section1.py:20:def main() -> None:
+scripts/run_section3.py:29:def load_house(cfg, h):
+scripts/run_section3.py:34:def prepare(df, mcfg):
+scripts/run_section3.py:40:def split_train_val(n, mcfg, embargo):
+scripts/run_section3.py:45:def run_models(train_parts, val_parts, test_X, test_y, test_valid, test_index, mcfg, cycle_params, objectives, quick):
+scripts/run_section3.py:78:def main():
+scripts/section1_checks4.py:13:def runs_of_identical(df, col):
+tests/test_cleaning.py:26:def test_standardise_columns_maps_names():
+tests/test_cleaning.py:32:def test_parse_timestamps_bad_value_becomes_nat():
+tests/test_cleaning.py:38:def test_nan_run_lengths():
+tests/test_cleaning.py:43:def test_sort_and_dedup_keep_first():
+tests/test_cleaning.py:52:def test_sort_and_dedup_keep_mean():
+tests/test_cleaning.py:60:def test_mask_impossible_values():
+tests/test_cleaning.py:72:def test_resample_to_grid_counts_readings_and_leaves_empty_minute_nan():
+tests/test_cleaning.py:82:def test_fill_short_gaps_fills_short_not_long():
+tests/test_cleaning.py:90:def test_outage_table_lists_each_outage():
+tests/test_cleaning.py:99:def test_combine_parts_keeps_part1_in_overlap():
+tests/test_cleaning.py:109:def test_local_to_utc_shifts_bst_and_drops_ambiguous_and_nonexistent():
+tests/test_cleaning.py:122:def test_pipeline_fills_short_gap_and_flags_long_outage():
+tests/test_cycles.py:6:def test_two_cycles_found():
+tests/test_cycles.py:16:def test_small_pause_is_merged_but_long_pause_splits():
+tests/test_cycles.py:26:def test_short_blip_is_dropped_and_nan_counts_as_off():
+tests/test_data.py:7:def write_csv(path, n=2000, header=("Time", "Unix", "Aggregate", "Appliance1", "Appliance2", "Appliance5", "Issues")):
+tests/test_data.py:19:def test_loader_returns_minute_frame(tmp_path):
+tests/test_data.py:29:def test_missing_channel_gives_clear_error(tmp_path):
+tests/test_data.py:40:def test_stuck_aggregate_becomes_nan(tmp_path):
+tests/test_features.py:10:def agg(n=300):
+tests/test_features.py:15:def test_shift_features_look_forward_and_backward():
+tests/test_features.py:24:def test_baseload_is_a_minimum_not_the_current_value():
+tests/test_features.py:32:def test_time_features_only_when_asked():
+tests/test_features.py:38:def test_irregular_index_is_rejected():
+tests/test_features.py:45:def test_context_minutes_covers_largest_window():
+tests/test_features.py:50:def test_no_target_in_features():
+tests/test_metrics.py:9:def series():
+tests/test_metrics.py:16:def test_always_off_sanity():
+tests/test_metrics.py:25:def test_perfect_prediction():
+tests/test_metrics.py:35:def test_known_small_example():
+tests/test_metrics.py:45:def test_nan_is_rejected():
+tests/test_metrics.py:50:def test_prediction_shifted_in_time_is_still_found_as_cycle():
+tests/test_pipeline_stuck.py:7:def make_raw():
+tests/test_pipeline_stuck.py:22:def cfg(stuck=True, agg_max=23999):
+tests/test_pipeline_stuck.py:30:def test_pipeline_turns_stuck_window_into_outage():
+tests/test_pipeline_stuck.py:38:def test_without_stuck_rule_old_behaviour_is_kept():
+tests/test_pipeline_stuck.py:44:def test_24000_ceiling_value_is_masked():
+tests/test_splits.py:7:def test_loho_never_trains_on_test_house():
+tests/test_splits.py:16:def test_overlap_is_detected():
+tests/test_splits.py:21:def test_chronological_masks_order_and_embargo():
+tests/test_splits.py:29:def test_bad_fraction():
+tests/test_stuck.py:7:def make_frame(tz=None):
+tests/test_stuck.py:20:def test_long_identical_run_is_flagged():
+tests/test_stuck.py:28:def test_apply_sets_all_channels_nan_inside_window_only():
+tests/test_stuck.py:38:def test_short_identical_run_not_flagged():
+tests/test_stuck.py:45:def test_two_far_apart_identical_readings_not_flagged():
+tests/test_stuck.py:52:def test_works_with_tz_aware_time():
+tests/test_stuck.py:59:def test_unsorted_input_raises():
+
+## CONFIG TOP-LEVEL KEYS
+4:paths:
+15:cleaning:
+43:washing_machine_channel:
+66:solar_houses: [3, 11, 21]
+71:plot:
+77:model:
+
+## DATA FOLDERS
+data/clean:
+total 3743920
+-rw-r--r--@ 1 rehaanraza  staff   382M Oct 27  2016 CLEAN_House1.csv
+-rw-r--r--@ 1 rehaanraza  staff   310M Oct 27  2016 CLEAN_House2.csv
+-rw-r--r--@ 1 rehaanraza  staff   415M Oct 27  2016 CLEAN_House5.csv
+-rw-r--r--@ 1 rehaanraza  staff   349M Oct 27  2016 CLEAN_House6.csv
+-rw-r--r--@ 1 rehaanraza  staff   371M Oct 27  2016 CLEAN_House7.csv
+
+data/processed:
+total 19944
+-rw-r--r--@ 1 rehaanraza  staff   3.2K Nov  6 02:44 house1_cleaning_log.json
+-rw-r--r--@ 1 rehaanraza  staff    20K Nov  6 02:44 house1_outages.csv
+-rw-r--r--@ 1 rehaanraza  staff   9.7M Nov  6 02:44 house1_raw_cleaned_1min.parquet
+drwxr-xr-x@ 8 rehaanraza  staff   256B Nov  6 12:17 minute
+drwxr-xr-x@ 5 rehaanraza  staff   160B Nov  6 02:44 old_run
+drwxr-xr-x@ 6 rehaanraza  staff   192B Nov  6 01:23 section2_1min
+
+data/processed/minute:
+total 74824
+-rw-r--r--@ 1 rehaanraza  staff   7.4M Nov  6 12:16 house1.parquet
+-rw-r--r--@ 1 rehaanraza  staff   7.0M Nov  6 12:16 house2.parquet
+-rw-r--r--@ 1 rehaanraza  staff   7.9M Nov  6 12:17 house5.parquet
+-rw-r--r--@ 1 rehaanraza  staff   6.6M Nov  6 12:17 house6.parquet
+-rw-r--r--@ 1 rehaanraza  staff   7.5M Nov  6 12:17 house7.parquet
+-rw-r--r--@ 1 rehaanraza  staff    21K Nov  6 12:17 prepare_log.json
+
+## OUTPUTS
+figures
+inspect_parts.txt
+inspect_parts2.txt
+inspect_parts3.txt
+inspect_parts4.txt
+inspect_parts5.txt
+inspect_parts6.txt
+inspect_parts7.txt
+inspect_parts7_perday.csv
+inspect_parts8.txt
+section1_checks.txt
+section1_checks2.txt
+section1_checks3.txt
+section1_checks4.txt
+section1_checks5.txt
+section3_checks_stuck.txt
+tables
+
+outputs/figures:
+house1_before_after_day.png
+house1_outage_timeline.png
+section1_before_after.png
+wm_low_power_ecdf_1min.png
+wm_power_distribution.png
+wm_power_distribution_1min.png
+wm_power_ecdf.png
+wm_power_ecdf_1min.png
+
+outputs/tables:
+cycle_summary_by_house.csv
+detected_activations.csv

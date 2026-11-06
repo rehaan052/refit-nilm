@@ -1,0 +1,81 @@
+======================================================================
+(a) Appliance NaN after cleaning (only minutes where aggregate is fine)
+======================================================================
+NaN % per appliance channel:
+              all  before_Oct2014  from_Oct2014
+appliance1   0.20            0.01          0.43
+appliance2   0.29            0.00          0.65
+appliance3   0.18            0.00          0.40
+appliance4   0.04            0.03          0.06
+appliance5   0.84            0.01          1.85
+appliance6   0.01            0.00          0.02
+appliance7   0.00            0.00          0.01
+appliance8   0.14            0.00          0.30
+appliance9  11.32            0.02         24.98
+
+Washing machine (appliance5) NaN minutes: 6744
+  of which inside NaN runs longer than 10 min: 5030
+  of which inside NaN runs longer than 60 min: 1602
+Last known WM value before those NaN minutes (rounded to 10 W):
+appliance5
+0.0      6239
+10.0      126
+510.0     106
+20.0       67
+30.0       64
+60.0       37
+
+======================================================================
+(b) Largest raw aggregate readings
+======================================================================
+RAW_House1_Part1.csv
+  top 15: [24000, 24000, 24000, 24000, 24000, 24000, 24000, 24000, 24000, 24000, 24000, 24000, 24000, 24000, 24000]
+  readings > 8000 W : 12761
+  readings > 25000 W: 0
+  99.99th percentile: 11853.699199996889
+RAW_House1_Part2.csv
+  top 15: [29159.0, 28950.0, 28855.0, 24732.0, 24000.0, 24000.0, 24000.0, 24000.0, 24000.0, 24000.0, 24000.0, 24000.0, 24000.0, 24000.0, 24000.0]
+  readings > 8000 W : 12531
+  readings > 25000 W: 3
+  99.99th percentile: 12505.0
+
+======================================================================
+(c) Part1: do values agree inside duplicate-timestamp groups?
+======================================================================
+rows in duplicate-time groups: 1211004 | groups: 565490
+
+Share of groups where max != min (values differ):
+Aggregate     0.0589
+Appliance1    0.0061
+Appliance2    0.0093
+Appliance3    0.0109
+Appliance4    0.0001
+Appliance5    0.0009
+Appliance6    0.0004
+Appliance7    0.0031
+Appliance8    0.0061
+Appliance9    0.0017
+
+Largest max-min difference (W):
+Aggregate     10474.0
+Appliance1    32767.0
+Appliance2      939.0
+Appliance3     1053.0
+Appliance4     8192.0
+Appliance5     2234.0
+Appliance6     2232.0
+Appliance7       53.0
+Appliance8       56.0
+Appliance9     2048.0
+
+99th percentile of max-min difference (W):
+Aggregate     8.0
+Appliance1    0.0
+Appliance2    0.0
+Appliance3    1.0
+Appliance4    0.0
+Appliance5    0.0
+Appliance6    0.0
+Appliance7    0.0
+Appliance8    0.0
+Appliance9    0.0

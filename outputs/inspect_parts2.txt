@@ -1,0 +1,89 @@
+======================================================================
+Part1
+backward steps (row, time before -> time after):
+  row 249601 2013-10-27 01:59:59 -> 2013-10-27 01:00:01
+  row 3790250 2014-08-15 02:00:36 -> 2014-08-15 02:00:35
+largest gaps (gap start, hours):
+   2014-01-24 01:56:26 998.4
+   2014-08-30 12:00:55 119.5
+   2013-11-07 10:03:19 25.6
+   2014-08-01 17:07:08 20.9
+   2014-09-06 22:51:24 14.6
+   2014-07-07 03:46:51 5.8
+   2014-09-07 14:38:07 4.0
+   2014-07-21 11:01:35 2.1
+number of gaps > 10 min: 331
+values above limits:
+  Aggregate > 25000: 0
+  Appliance1 > 4000: 662
+  Appliance2 > 4000: 18
+  Appliance3 > 4000: 38
+  Appliance4 > 4000: 2014
+  Appliance5 > 4000: 156
+  Appliance6 > 4000: 24
+  Appliance7 > 4000: 3
+  Appliance8 > 4000: 88
+  Appliance9 > 4000: 35
+most frequent values above 4000 (all appliance cols):
+   8192.0 1109
+   4096.0 818
+   4160.0 447
+   4169.0 100
+   98301.0 93
+   16384.0 86
+   32767.0 28
+   8196.0 22
+rows sharing Time with a DIFFERENT row: 90085
+                    Time  Aggregate  Appliance1  Appliance2  Appliance3  Appliance4  Appliance5
+340  2013-10-09 14:41:00     1034.0         0.0        45.0         0.0         0.0         0.0
+341  2013-10-09 14:41:00     1167.0         0.0        45.0         0.0         0.0         0.0
+1395 2013-10-09 16:26:30      157.0        68.0        45.0         0.0         0.0         0.0
+1396 2013-10-09 16:26:30      157.0        69.0        45.0         0.0         0.0         0.0
+1475 2013-10-09 16:34:30      228.0         0.0         0.0        72.0         0.0         0.0
+1476 2013-10-09 16:34:30      227.0         0.0         0.0        71.0         0.0         0.0
+1492 2013-10-09 16:36:16      533.0         0.0         0.0        73.0         0.0         0.0
+1493 2013-10-09 16:36:16      533.0         0.0         0.0        72.0         0.0         0.0
+======================================================================
+Part2
+backward steps (row, time before -> time after):
+largest gaps (gap start, hours):
+   2015-05-10 23:36:10 207.6
+   2015-06-10 13:19:01 180.3
+   2014-08-28 04:23:05 108.5
+   2015-04-03 01:43:17 104.6
+   2015-03-22 08:15:59 55.1
+   2015-05-24 10:09:42 50.0
+   2014-10-27 00:05:01 37.7
+   2015-03-31 04:22:37 36.1
+number of gaps > 10 min: 59
+values above limits:
+  Aggregate > 25000: 3
+  Appliance1 > 4000: 184
+  Appliance2 > 4000: 22
+  Appliance3 > 4000: 80
+  Appliance4 > 4000: 71
+  Appliance5 > 4000: 65
+  Appliance6 > 4000: 12
+  Appliance7 > 4000: 371
+  Appliance8 > 4000: 91
+  Appliance9 > 4000: 15
+most frequent values above 4000 (all appliance cols):
+   4096.0 255
+   8192.0 182
+   16384.0 69
+   4097.0 22
+   73725.0 19
+   10240.0 18
+   32767.0 17
+   8266.0 15
+rows sharing Time with a DIFFERENT row: 0
+Empty DataFrame
+Columns: [Time, Aggregate, Appliance1, Appliance2, Appliance3, Appliance4, Appliance5]
+Index: []
+======================================================================
+OVERLAP AT 1-MIN (appliances > 4000 W masked to NaN; Aggregate unmasked)
+window: 2014-06-27 21:57:00 -> 2014-10-01 01:27:00 | minutes in window: 137011
+minutes with Aggregate data  Part1: 125954  Part2: 128495
+Aggregate | minutes in both: 121406 | mean abs diff: 57.72 | median abs diff: 1.26 | corr: 0.7907 | share within 5 W: 0.742
+Appliance1 | minutes in both: 119868 | mean abs diff: 1.83 | median abs diff: 0.0 | corr: 0.9438 | share within 5 W: 0.9614
+Appliance5 | minutes in both: 119804 | mean abs diff: 4.07 | median abs diff: 0.0 | corr: 0.804 | share within 5 W: 0.9794

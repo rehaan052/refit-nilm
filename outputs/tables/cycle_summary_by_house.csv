@@ -1,0 +1,5 @@
+House,Total_Episodes,Median_Duration_Min,Mean_Duration_Min,Median_Active_Minutes,Median_Peak_Power_W,Median_Energy_Wh,Mean_Energy_Wh,Issues_Affected_Episodes_Pct
+1,395,33.0,40.45,31.0,2321.87,312.79,355.95,98.99
+2,338,96.0,97.6,91.5,2088.9,607.21,587.51,96.75
+6,121,129.0,105.71,128.0,2049.18,674.99,656.3,97.52
+7,878,60.0,73.53,60.0,2080.82,529.82,553.08,93.62

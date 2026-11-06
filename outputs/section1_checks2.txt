@@ -1,0 +1,99 @@
+======================================================================
+Part1
+======================================================================
+quantiles: {0.5: 240.0, 0.9: 1126.0, 0.99: 3536.0, 0.999: 10603.0}
+exactly 24000 W: 24
+> 8000 W: 12761 | share: 0.291 %
+most common values above 8000 W:
+Aggregate
+10242    51
+10332    47
+10407    44
+10176    40
+10598    40
+10391    40
+10361    39
+10457    39
+
+runs of consecutive readings > 8000 W: 421
+Aggregate
+1 reading     19
+2-5           59
+6-30         157
+>30          186
+isolated single readings: 19
+  median of previous / next reading: 791.0 773.0
+count of readings > 8000 W by month:
+Time
+2013-10     406
+2013-11    1351
+2013-12    2200
+2014-01     750
+2014-03     454
+2014-04    1428
+2014-05    1290
+2014-06    1601
+2014-07    1453
+2014-08    1008
+2014-09     820
+Freq: M
+======================================================================
+Part2
+======================================================================
+quantiles: {0.5: 234.0, 0.9: 666.0, 0.99: 3454.0, 0.999: 10773.0}
+exactly 24000 W: 38
+> 8000 W: 12531 | share: 0.303 %
+most common values above 8000 W:
+Aggregate
+12505.0    1534
+10569.0      49
+10050.0      38
+24000.0      38
+10439.0      37
+10059.0      36
+10486.0      36
+10051.0      35
+
+runs of consecutive readings > 8000 W: 998
+Aggregate
+1 reading    114
+2-5          282
+6-30         531
+>30           71
+isolated single readings: 114
+  median of previous / next reading: 4735.0 1529.0
+count of readings > 8000 W by month:
+Time
+2014-06     171
+2014-07     991
+2014-08     677
+2014-09     623
+2014-10     689
+2014-11    1128
+2014-12    1671
+2015-01     870
+2015-02    2511
+2015-03     524
+2015-04    1264
+2015-05     672
+2015-06     465
+2015-07     275
+Freq: M
+
+======================================================================
+(c2) Part1: size of value differences inside duplicate-time groups
+======================================================================
+groups with Aggregate spread > 10 W: 4583
+groups with Aggregate spread > 100 W: 1159
+groups with Aggregate spread > 1000 W: 355
+groups with Appliance5 spread > 10 W: 385
+groups with Appliance5 spread > 100 W: 151
+groups with Appliance5 spread > 1000 W: 11
+
+======================================================================
+(d) Cleaned 1-minute aggregate: how many minutes are very high?
+======================================================================
+minutes with aggregate > 5000 W: 2936
+minutes with aggregate > 8000 W: 2131
+minutes with aggregate > 12000 W: 240
+minutes with aggregate > 20000 W: 10
