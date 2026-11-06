@@ -1,0 +1,98 @@
+# Central settings for the REFIT NILM project.
+# All paths are relative to the project root.
+
+paths:
+  raw_house1_files:
+    - data/raw/RAW_House1_Part1.csv
+    - data/raw/RAW_House1_Part2.csv
+  clean_dir: data/clean
+  processed_dir: data/processed
+  minute_dir: data/processed/minute
+  model_out_dir: outputs/section3
+  figures_dir: outputs/figures
+
+# ---------------- Section 1: raw data cleaning (House 1) ----------------
+cleaning:
+  dedup_keep: first            # rule for duplicate timestamps: first | last | mean
+  resample_rule: 1min
+  resample_agg: mean           # average power inside each minute
+  max_fill_minutes: 3          # gaps up to this are forward-filled; longer ones stay NaN and are flagged
+  aggregate_max_w: 23999       # our choice: readings at exactly 24000 W (= 100 A x 240 V, looks like a ceiling value) and above are masked
+  appliance_max_w: 4000        # REFIT README: IAM readings above 4000 W are sensor errors
+  stuck_min_minutes: 30        # our choice: aggregate identical for this long = stuck logger; all channels set to NaN in that window
+  stuck_min_readings: 20       # ... and at least this many readings (so a plain data gap is not mistaken for a stuck sensor)
+  gap_thresholds_s: [30, 60, 120, 600, 3600]
+  raw_time_zone: Europe/London # raw Time = UK local clock (our finding from DST row counts); delete this line to skip conversion
+
+# House 1 channel names (from the REFIT README, to be verified against the data)
+house1_channels:
+  aggregate: aggregate
+  appliance1: fridge
+  appliance2: freezer_1
+  appliance3: freezer_2
+  appliance4: washer_dryer
+  appliance5: washing_machine
+  appliance6: dishwasher
+  appliance7: computer
+  appliance8: television_site
+  appliance9: electric_heater
+
+# ---------------- Sections 2-3: washing-machine channel per house ----------------
+# From the REFIT README (state at the START of the study). The column exists in the data (checked in Section 2);
+# the appliance identity itself comes from the README, not from a physical check.
+# null = no washing machine; a list = several candidate channels (house 4 has two machines).
+washing_machine_channel:
+  1: appliance5     # appliance4 = washer dryer
+  2: appliance2
+  3: appliance6     # solar-contaminated aggregate
+  4: [appliance4, appliance5]   # two machines
+  5: appliance3     # excluded from the primary cohort in Section 2 (suspicious constant WM readings)
+  6: appliance2
+  7: appliance5
+  8: appliance4     # make/model blank in README, uncertain; appliance3 = washer dryer
+  9: appliance3     # appliance2 = washer dryer
+  10: appliance5
+  11: appliance3    # solar-contaminated aggregate
+  12: null          # no washing machine
+  13: appliance3    # appliance changes on 25 Mar 2015: use data before that date
+  15: appliance3
+  16: appliance5
+  17: appliance4
+  18: appliance5    # appliance4 = washer dryer in garage
+  19: appliance2
+  20: appliance4
+  21: appliance3    # solar-contaminated aggregate
+
+# Houses whose aggregate is solar-contaminated (excluded from the model)
+solar_houses: [3, 11, 21]
+
+# ---------------- Plot settings ----------------
+# NOTE: these keys are a guess. Check what src/plotting.py and the notebook actually read:
+#   grep -n "cfg\[" src/plotting.py notebooks/*.ipynb
+plot:
+  dpi: 150
+  figsize: [14, 5]
+
+# ---------------- Section 3: model ----------------
+model:
+  houses: [1, 2, 6, 7]          # Section 2 primary cohort (our choice); House 5 left out (suspicious constant WM readings)
+  clean_time_zone: null         # null = keep CLEAN timestamps as they are; UTC vs local is being checked (scripts/section3_checks_tz.py)
+  on_threshold_w: 20            # Section 2 rule (our choice): minute is ON above this power
+  cycle_merge_gap_minutes: 5    # Section 2 rule (our choice): up to 5 observed OFF minutes between ON runs are merged
+  cycle_min_minutes: 27         # Section 2 rule (our choice): merged episode must span at least 27 minutes
+  cycle_min_energy_wh: 0        # no minimum-energy filter (as in Section 2)
+  window_minutes: 30            # our choice: features look up to 30 min before and after each minute
+  rolling_windows: [5, 15, 31, 61]
+  baseload_minutes: 60          # our choice: baseload = rolling minimum of the aggregate over this window
+  use_time_features: false      # hour/weekday features; test on and off as an ablation
+  train_stride: 3               # our choice: fit on every 3rd minute (neighbouring minutes are nearly identical); test uses ALL minutes
+  validation_fraction: 0.2      # last 20 % of each training house's time = validation block (early stopping)
+  time_split_train_fraction: 0.7
+  objectives: [tweedie, l2]     # compared against each other
+  lgbm:
+    n_estimators: 2000
+    learning_rate: 0.05
+    num_leaves: 31
+    min_child_samples: 50
+    tweedie_variance_power: 1.5   # LightGBM default; range 1 to 2
+    early_stopping_rounds: 100
